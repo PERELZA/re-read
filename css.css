@@ -1,6 +1,6 @@
 /* General */
 body {
-    font-family: 'Courier New', Courier, monospace;
+    font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
     background-color: #ffffff;
@@ -11,26 +11,25 @@ body {
     width: 90%;
     max-width: 1200px;
     margin: 0 auto;
+    display: grid;
+    grid-template-rows: auto auto 1fr auto;
+    gap: 20px;
 }
 
-/* Barra superior */
-.top-bar {
+/* Header */
+.header {
     background-color: #144d36;
-    padding: 15px;
-}
-
-.nav-title {
     color: white;
-    font-size: 18px;
+    text-align: left;
+    font-size: 22px;
     font-weight: bold;
+    padding: 20px;
 }
 
-/* Menú de navegación */
+/* Navegación */
 .nav {
-    background-color: #ffffff;
-    padding: 10px 0;
-    border-bottom: 2px solid #ddd;
-    text-align: center;
+    background-color: #144d36;
+    padding: 10px;
 }
 
 .nav ul {
@@ -39,61 +38,48 @@ body {
     justify-content: center;
     padding: 0;
     margin: 0;
-    flex-wrap: wrap;
 }
 
 .nav ul li {
+    color: white;
     padding: 10px 20px;
     cursor: pointer;
-    font-weight: bold;
 }
 
 .nav ul .active {
     background-color: #e57e25;
-    color: white;
 }
 
 /* Contenido principal */
 .main-content {
-    display: flex;
-    justify-content: space-between;
+    display: grid;
+    grid-template-columns: 65% 30%;
+    gap: 5%;
     margin-top: 20px;
 }
 
-/* Columnas */
-.col {
-    padding: 20px;
-}
-
-/* Izquierda (Texto principal) */
+/* Columna izquierda */
 .left {
-    width: 65%;
-}
-
-.left h1 {
-    font-size: 32px;
-    font-weight: bold;
-    text-align: center;
+    background: white;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
 .left h2 {
-    font-size: 20px;
+    font-size: 24px;
     font-weight: bold;
     border-bottom: 2px solid #e57e25;
     padding-bottom: 5px;
-    margin-top: 20px;
 }
 
-/* Derecha (Top ventas) */
+/* Columna derecha */
 .right {
-    width: 30%;
     background-color: #144d36;
     color: white;
     padding: 20px;
 }
 
 .right h3 {
-    font-size: 18px;
     border-bottom: 2px solid white;
     padding-bottom: 5px;
 }
@@ -111,19 +97,30 @@ body {
     font-weight: bold;
 }
 
-/* 🎯 MEJORA RESPONSIVE */
+/* Footer */
+.footer {
+    background-color: #144d36;
+    color: white;
+    text-align: center;
+    padding: 10px;
+}
+
+/* 🎯 CORRECCIÓN: Mantener columnas en pantallas grandes */
+@media (min-width: 1025px) {
+    .main-content {
+        display: grid;
+        grid-template-columns: 65% 30%;
+        gap: 5%;
+    }
+}
+
+/* 📱 RESPONSIVE PARA MÓVILES */
 @media (max-width: 1024px) {
     .main-content {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .left {
-        width: 100%;
+        grid-template-columns: 1fr;
     }
 
     .right {
-        width: 100%;
         margin-top: 20px;
         text-align: center;
     }
@@ -132,25 +129,15 @@ body {
 @media (max-width: 768px) {
     .nav ul {
         flex-direction: column;
+        text-align: center;
     }
 
     .nav ul li {
-        display: block;
-        width: 100%;
-        text-align: center;
         padding: 15px 0;
-    }
-
-    .top-bar {
-        text-align: center;
     }
 }
 
 @media (max-width: 480px) {
-    .left h1 {
-        font-size: 24px;
-    }
-
     .left h2 {
         font-size: 18px;
     }
