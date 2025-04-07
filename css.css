@@ -54,7 +54,7 @@ body {
 .main-content {
     display: grid;
     grid-template-columns: 65% 30%;
-    gap: 5%;
+    gap: %;
     margin-top: 20px;
 }
 
@@ -97,15 +97,6 @@ body {
     font-weight: bold;
 }
 
-/* Footer */
-.footer {
-    background-color: #144d36;
-    color: white;
-    text-align: center;
-    padding: 10px;
-}
-
-/* 🎯 CORRECCIÓN: Mantener columnas en pantallas grandes */
 @media (min-width: 1025px) {
     .main-content {
         display: grid;
