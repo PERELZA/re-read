@@ -1,86 +1,82 @@
-/* General */
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Courier New', Courier, monospace;
     margin: 0;
     padding: 0;
-    background-color: #ffffff;
+    background-color: white;
+    color: black;
 }
 
-/* Contenedor principal */
-.container {
-    width: 90%;
-    max-width: 1200px;
-    margin: 0 auto;
-    display: grid;
-    grid-template-rows: auto auto 1fr auto;
-    gap: 20px;
-}
-
-/* Header */
 .header {
     background-color: #144d36;
     color: white;
-    text-align: left;
-    font-size: 10px;
+    padding: 10px 20px;
     font-weight: bold;
-    padding: 10px;
+    font-size: 14px;
 }
 
-/* Navegación */
+.logo {
+    font-size: 14px;
+}
+
+.intro {
+    text-align: center;
+    padding: 40px 20px;
+}
+
+.intro h1 {
+    font-size: 48px;
+    font-weight: bold;
+}
+
+.intro p {
+    max-width: 600px;
+    margin: 0 auto;
+    font-size: 16px;
+}
+
 .nav {
-    padding: 10px;
+    padding: 0;
+    margin-bottom: 20px;
     border-bottom: 2px solid #e57e25;
 }
 
 .nav ul {
     list-style: none;
     display: flex;
-    justify-content: left;
     padding: 0;
     margin: 0;
 }
 
-.nav ul li {
-    color: rgb(0, 0, 0);
-    padding: 10px 20px;
+.nav li {
+    padding: 10px 15px;
     cursor: pointer;
 }
 
-.nav ul .active {
+.nav .active {
     background-color: #e57e25;
+    color: white;
 }
 
-/* Contenido principal */
 .main-content {
     display: grid;
-    grid-template-columns: 65% 30%;
-    gap: %;
-    margin-top: 20px;
+    grid-template-columns: 2fr 1fr;
+    gap: 30px;
+    padding: 0 20px 40px;
 }
 
-/* Columna izquierda */
-.left {
-    background: white;
-    padding: 20px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
-
-.left h2 {
-    font-size: 24px;
+.left h3 {
+    font-size: 18px;
     font-weight: bold;
-    padding-bottom: 5px;
 }
 
-/* Columna derecha */
-.right {
-    
-    color: rgb(0, 0, 0);
-    padding: 20px;
+.left p {
+    margin-bottom: 20px;
+    line-height: 1.6;
 }
 
 .right h3 {
-    border-bottom: 2px solid white;
-    padding-bottom: 5px;
+    font-size: 18px;
+    margin-bottom: 15px;
 }
 
 .right ul {
@@ -88,72 +84,98 @@ body {
     padding: 0;
 }
 
-.right ul li {
-    background: #144d36;
-    
-    margin: 10px 0;
-    padding: 10px;
+.right li {
+    background-color: #144d36;
+    color: white;
+    margin-bottom: 10px;
+    padding: 12px;
     font-weight: bold;
-}
-#li4 {
- color: #ffffff;
 }
 
-.Re-Read {
-    color: #020202;
-    padding: 80px;
-    font-weight: bold;
+.precios-libros {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    margin: 30px 0;
+    flex-wrap: wrap;
+}
+
+.libro {
+    width: 120px;
+    height: 180px;
+    border-radius: 8px;
+    padding: 20px 10px;
+    color: white;
     text-align: center;
-    cursor: pointer;
-    font-size: 20px;
+    font-weight: bold;
+    font-size: 18px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
 }
 
-#T2 {
-    color: #000000;
-    font-size: 50px;
-}
-@media (min-width: 1025px) {
-    .main-content {
-        display: grid;
-        grid-template-columns: 65% 30%;
-        gap: 5%;
-    }
+.libro p {
+    margin: 0;
+    font-size: 16px;
 }
 
-/* 📱 RESPONSIVE PARA MÓVILES */
-@media (max-width: 1024px) {
+.libro strong {
+    font-size: 24px;
+    margin-top: 10px;
+}
+
+.azul {
+    background-color: #2196f3;
+}
+
+.rojo {
+    background-color: #f44336;
+}
+
+.verde {
+    background-color: #26a69a;
+}
+
+@media (max-width: 700px) {
     .main-content {
         grid-template-columns: 1fr;
+        padding: 0 15px 30px;
     }
 
     .right {
-        margin-top: 20px;
-        text-align: center;
+        margin-top: 30px;
     }
-}
 
-@media (max-width: 768px) {
+    .intro {
+        padding: 30px 15px;
+    }
+
+    .intro h1 {
+        font-size: 32px;
+    }
+
+    .intro p {
+        font-size: 14px;
+    }
+
     .nav ul {
         flex-direction: column;
+        align-items: center;
+    }
+
+    .nav li {
+        width: 100%;
         text-align: center;
+        padding: 10px 0;
     }
 
-    .nav ul li {
-        padding: 15px 0;
-    }
-}
-
-@media (max-width: 480px) {
-    .left h2 {
-        font-size: 18px;
-    }
-
-    .right h3 {
+    .left h3, .right h3 {
         font-size: 16px;
     }
 
-    .right ul li {
+    .right li {
         font-size: 14px;
-        padding: 8px;
+        padding: 10px;
     }
 }
