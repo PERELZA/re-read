@@ -166,47 +166,20 @@ body {
     gap: 30px; /* Espaciado entre columnas */
     padding: 0 20px 40px; /* Espaciado interno */
 }
+/* Ajustes en pantallas pequeñas (700px o menos) */
 @media (max-width: 700px) {
-    /* Cambia el diseño de la página a columna */
     .main-content {
         display: flex; /* Cambia a diseño flexible */
-        flex-direction: column; /* Apila los elementos uno debajo del otro */
+        flex-direction: column; /* Asegura que los elementos estén en una sola columna */
         padding: 0 15px 30px;
         min-height: 100vh; /* Asegura que la página ocupe al menos toda la altura de la ventana */
     }
 
-    /* Asegura que el contenido principal esté en su lugar */
-    .left {
-        order: 1; /* Asegura que .left esté antes de .right */
-        flex: 1; /* Deja que .left ocupe el espacio disponible */
-    }
-
-    /* Estilo de la sección de "Top ventas" para estar al final */
-    .right {
-        order: 2; /* Coloca la sección .right debajo de .left */
-        margin-top: 30px; /* Espaciado superior para separar de la sección .left */
-        bottom: 0; /* Coloca la sección en la parte inferior */
-        width: 100%; /* Asegura que ocupe todo el ancho disponible */
-    }
-
-    /* Ajustes de estilo para los encabezados y elementos dentro de .right */
-    .left h3, .right h3 {
-        font-size: 16px; /* Ajuste en el tamaño de los encabezados */
-    }
-
-    .right li {
-        font-size: 14px;
-        padding: 10px;
-    }
-
-    /* Diseño para los ebooks, adaptado a pantallas pequeñas */
-    .ebooks {
-        grid-template-columns: 1fr; /* Una sola columna para los ebooks en pantallas pequeñas */
-    }
-
-    .ebook img {
-        max-height: none;
+    .top-ventas {
+        margin-top: 20px; /* Separación superior */
+        position: static; /* Cambia a posición estática para que fluya con el contenido */
+        width: 100%; /* Ocupa todo el ancho */
+        box-shadow: none; /* Elimina la sombra si no es necesaria */
     }
 }
-
 
