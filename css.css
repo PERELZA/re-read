@@ -128,15 +128,15 @@ body {
 }
 
 .ebooks {
-    display: flex; /* Diseño flexible */
-    flex-wrap: wrap; /* Permite que los elementos se ajusten en varias filas */
-    gap: 20px; /* Espaciado entre elementos */
+    display: grid; /* Cambia a diseño de cuadrícula */
+    grid-template-columns: repeat(3, 1fr); /* Tres columnas de igual ancho */
+    gap: 20px; /* Espaciado entre los elementos */
     margin-top: 30px; /* Espaciado superior */
-    justify-content: flex-start; /* Alinea los elementos al inicio */
+    justify-content: center; /* Centra la cuadrícula horizontalmente */
 }
 
 .ebook {
-    width: 150px; /* Ancho del contenedor */
+    width: 100%; /* Ajusta el ancho al contenedor de la cuadrícula */
     text-align: center; /* Centra el texto */
     font-size: 13px; /* Tamaño de fuente */
 }
@@ -145,7 +145,7 @@ body {
     width: 100%; /* La imagen ocupa todo el ancho del contenedor */
     height: auto; /* Ajusta la altura automáticamente */
     max-height: 200px; /* Altura máxima de la imagen */
-    object-fit: cover; /* Ajusta la imagen para que cubra el contenedor sin deformarse */
+    object-fit: contain; /* Ajusta la imagen para que se vea completa sin recortarse */
     border-radius: 4px; /* Bordes redondeados */
     box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1); /* Sombra sutil */
 }
@@ -166,42 +166,19 @@ body {
     gap: 30px; /* Espaciado entre columnas */
     padding: 0 20px 40px; /* Espaciado interno */
 }
-
 @media (max-width: 700px) {
     .main-content {
-        grid-template-columns: 1fr;
+        grid-template-columns: 1fr; /* Cambia a una sola columna */
         padding: 0 15px 30px;
     }
 
     .right {
-        margin-top: 30px;
-    }
-
-    .intro {
-        padding: 30px 15px;
-    }
-
-    .intro h1 {
-        font-size: 32px;
-    }
-
-    .intro p {
-        font-size: 14px;
-    }
-
-    .nav ul {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .nav li {
-        width: 100%;
-        text-align: center;
-        padding: 10px 0;
+        margin-top: 30px; /* Espaciado superior para la sección de las top ventas */
+        order: 2; /* Asegura que el contenido de .right esté debajo del contenido de .left */
     }
 
     .left h3, .right h3 {
-        font-size: 16px;
+        font-size: 16px; /* Ajuste en el tamaño de los encabezados */
     }
 
     .right li {
@@ -210,10 +187,16 @@ body {
     }
 
     .ebooks {
-        grid-template-columns: 1fr;
+        grid-template-columns: 1fr; /* Una sola columna para los ebooks en pantallas pequeñas */
     }
 
     .ebook img {
         max-height: none;
     }
+
+    .ventas {
+        grid-column: span 1; /* Asegura que ocupe toda la fila */
+    }
 }
+
+
