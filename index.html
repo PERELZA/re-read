@@ -1,115 +1,174 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <!-- Configuración básica del documento -->
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Re-Read</title>
-    <!-- Enlace al archivo CSS externo -->
-    <link rel="stylesheet" href="css.css" />
+    <link rel="stylesheet" href="css.css">
+
+    <!-- Estilos específicos para controlar qué sección está activa -->
+    <style>
+        .section-content {
+            display: none; /* Oculta las secciones por defecto */
+        }
+
+        .section-content.active {
+            display: grid; /* Muestra solo la sección activa como grid */
+            grid-template-columns: 2fr 1fr; /* Distribución: contenido principal + columna lateral */
+            gap: 30px;
+            padding: 0 20px 40px;
+        }
+    </style>
 </head>
 <body>
-
-    <!-- Encabezado principal con el logo -->
+    <!-- Encabezado con el logo -->
     <header class="header">
         <div class="logo">Re-Read</div>
     </header>
 
-    <!-- Sección introductoria con una descripción general de la tienda -->
+    <!-- Sección de introducción general -->
     <section class="intro">
         <h1>Re-Read</h1>
-        <p>Descripción sobre la filosofía de la tienda y su propósito.</p>
+        <p>
+            En Re-Read podrás encontrar libros de segunda mano en perfecto estado. También vender los tuyos. 
+            Porque siempre hay libros leídos y libros por leer. Por eso Re-compramos y Re-vendemos para que nunca te quedes sin ninguno de los dos.
+        </p>
     </section>
 
-    <!-- Barra de navegación con tres secciones -->
+    <!-- Barra de navegación para cambiar entre secciones -->
     <nav class="nav">
         <ul>
-            <li class="active" data-section="home">Re-Read</li>
-            <li data-section="libros">Libros</li>
-            <li data-section="ebooks">eBooks</li>
+            <li class="active" data-target="home"><a href="#">Re-Read</a></li>
+            <li data-target="libros"><a href="#">Libros</a></li>
+            <li data-target="ebooks"><a href="#">eBooks</a></li>
         </ul>
     </nav>
 
-    <!-- Sección principal: Re-Read -->
-    <div id="home" class="main-content section-content active">
+    <!-- Sección de inicio (página principal) -->
+    <div id="home" class="section-content active">
         <section class="left">
-            <h3>Mensajes sobre sostenibilidad y lectura</h3>
-            <p>Contenido informativo sobre el compromiso ecológico de la tienda.</p>
+            <!-- Mensaje institucional -->
+            <h3>Nunca la lectura ha sido tan necesaria</h3>
+            <p>En estos tiempos difíciles Re-Read se suma al mensaje de #yomequedoencasa por el bien común de la sociedad.</p>
+
+            <!-- Filosofía Eco-friendly -->
+            <h3>Reduce & Reuse & Read</h3>
+            <p>Somos la librería Eco-Friendly — Re-Read nació pensando en verde con el objetivo de compartir una pasión, la lectura y para expresar una preocupación: si queremos construir un futuro sostenible, es necesario que reduzcamos el consumo y que reutilicemos cuantos más objetos materiales mejor.</p>
         </section>
 
-        <!-- Lado derecho con lista de libros más vendidos -->
+        <!-- Columna lateral con top ventas -->
         <aside class="right">
             <h3>Top ventas</h3>
             <ul>
-                <li>Listado de libros destacados.</li>
+                <li>Cien años de soledad.</li>
+                <li>Crónica de una muerte anunciada.</li>
+                <li>El otoño del patriarca.</li>
+                <li>El general en su laberinto.</li>
             </ul>
         </aside>
     </div>
 
-    <!-- Sección: Libros físicos -->
-    <div id="libros" class="main-content section-content">
+    <!-- Sección de libros físicos -->
+    <div id="libros" class="section-content">
         <section class="left">
-            <h3>Precios y beneficios de vender libros usados</h3>
-            <p>Explicación de precios y cómo vender tus libros a Re-Read.</p>
+            <!-- Información sobre precios -->
+            <h3>Todos los libros tienen el mismo precio</h3>
+            <p>Libros casi nuevos a un precio casi imposible.</p>
 
-            <!-- Imágenes representando precios por cantidad -->
+            <!-- Imágenes con las ofertas -->
             <div class="precios-libros">
-                <div class="libro"><img src="IMG/1-libro-3€.gif" alt="1 libro por 3€" /></div>
-                <div class="libro"><img src="IMG/2-libros-5€.gif" alt="2 libros por 5€" /></div>
-                <div class="libro"><img src="IMG/5-libros-10€.gif" alt="5 libros por 10€" /></div>
+                <div class="libro">
+                    <img src="IMG/1-libro-3€.gif" alt="1 libro por 3€">
+                </div>
+                <div class="libro">
+                    <img src="IMG/2-libros-5€.gif" alt="2 libros por 5€">
+                </div>
+                <div class="libro">
+                    <img src="IMG/5-libros-10€.gif" alt="5 libros por 10€">
+                </div>
             </div>
+
+            <!-- Información sobre compra de libros usados -->
+            <h4>¿Te cambias de piso? ¿Tienes que vaciar la casa? ¿O sencillamente necesitas algo más de espacio?</h4>
+            <p>En Re-Read compramos tus libros para darles una segunda vida. Los compramos todos al mismo precio: 0,20 euros.
+                Siempre hay libros leídos y libros por leer. Por eso Re-compramos y Re-vendemos para que nunca te quedes sin ninguno de los dos.</p>
         </section>
 
-        <!-- Lista repetida de libros top ventas -->
+        <!-- Columna lateral con top ventas -->
         <aside class="right">
             <h3>Top ventas</h3>
             <ul>
-                <li>Listado de libros destacados.</li>
+                <li>Cien años de soledad.</li>
+                <li>Crónica de una muerte anunciada.</li>
+                <li>El otoño del patriarca.</li>
+                <li>El general en su laberinto.</li>
             </ul>
         </aside>
     </div>
 
-    <!-- Sección: eBooks (libros digitales) -->
-    <div id="ebooks" class="main-content section-content">
+    <!-- Sección de eBooks -->
+    <div id="ebooks" class="section-content">
         <section class="left">
-            <h3>Selección de eBooks actuales</h3>
+            <h3>Toda la actualidad en eBook</h3>
 
-            <!-- Galería de eBooks con imágenes y descripciones -->
+            <!-- Galería de eBooks -->
             <div class="ebooks">
-                <div class="ebook"><img src="IMG/cell.jpeg" alt="Cell" /><p>Descripción breve.</p></div>
-                <div class="ebook"><img src="IMG/elciclodelhombrelobo.jpeg" alt="El ciclo del hombre lobo" /><p>Descripción breve.</p></div>
-                <div class="ebook"><img src="IMG/elresplandor.jpeg" alt="El resplandor" /><p>Descripción breve.</p></div>
-                <div class="ebook"><img src="IMG/doctorsleep.jpeg" alt="Doctor Sueño" /><p>Descripción breve.</p></div>
-                <div class="ebook"><img src="IMG/mientrasescribo.jpeg" alt="Mientras Escribo" /><p>Descripción breve.</p></div>
+                <div class="ebook">
+                    <img src="IMG/cell.jpeg" alt="Cell">
+                    <p>A través de los teléfonos móviles se esconde una señal que convierte en zombis...</p>
+                </div>
+                <div class="ebook">
+                    <img src="IMG/elciclodelhombrelobo.jpeg" alt="El ciclo del hombre lobo">
+                    <p>Una escalofriante revisión del mito del hombre lobo a través de la literatura de terror...</p>
+                </div>
+                <div class="ebook">
+                    <img src="IMG/elresplandor.jpeg" alt="El resplandor">
+                    <p>En el Palace que Danny habita vuelven los espíritus. El lugar esconde un mensaje de horror...</p>
+                </div>
+                <div class="ebook">
+                    <img src="IMG/doctorsleep.jpeg" alt="Doctor Sueño">
+                    <p>Una novela que estremecerá a todos los que amaron El resplandor. El regreso de Danny Torrance...</p>
+                </div>
+                <div class="ebook">
+                    <img src="IMG/mientrasescribo.jpeg" alt="Mientras Escribo">
+                    <p>Pocas veces un libro sobre el oficio de escribir ha resultado tan clarificador, útil y revelador...</p>
+                </div>
             </div>
         </section>
 
-        <!-- Lista repetida de libros top ventas -->
+        <!-- Columna lateral con top ventas -->
         <aside class="right">
             <h3>Top ventas</h3>
             <ul>
-                <li>Listado de libros destacados.</li>
+                <li>Cien años de soledad.</li>
+                <li>Crónica de una muerte anunciada.</li>
+                <li>El otoño del patriarca.</li>
+                <li>El general en su laberinto.</li>
             </ul>
         </aside>
     </div>
 
-    <!-- Script JS para cambiar entre secciones al hacer clic en la navegación -->
+    <!-- Script para cambiar entre secciones al hacer clic en la barra de navegación -->
     <script>
         const navItems = document.querySelectorAll('.nav li');
         const sections = document.querySelectorAll('.section-content');
 
-        // Cambia la sección visible según el elemento del menú clicado
+        // Añade un evento a cada elemento del menú
         navItems.forEach(item => {
             item.addEventListener('click', () => {
-                // Quitar clase 'active' a todos los botones
+                // Elimina la clase 'active' de todos los ítems
                 navItems.forEach(i => i.classList.remove('active'));
+                // Activa el ítem clicado
                 item.classList.add('active');
 
-                // Mostrar solo la sección correspondiente
-                const sectionId = item.getAttribute('data-section');
-                sections.forEach(sec => {
-                    sec.classList.remove('active');
-                    if (sec.id === sectionId) sec.classList.add('active');
+                const target = item.getAttribute('data-target');
+
+                // Oculta todas las secciones y muestra solo la seleccionada
+                sections.forEach(section => {
+                    section.classList.remove('active');
+                    if (section.id === target) {
+                        section.classList.add('active');
+                    }
                 });
             });
         });
